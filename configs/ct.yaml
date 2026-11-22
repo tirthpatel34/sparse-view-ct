@@ -1,0 +1,12 @@
+# CT data and geometry, read by dataset/lodopab.py and scripts/*.py.
+
+data:
+  root: "data/lodopab"         # holds train/, val/ and test/ subfolders of LoDoPaB ground_truth_*.hdf5
+  size: 181                    # 362 -> 181; with circle false this gives ceil(181*sqrt(2)) = 256 detector cells
+  n_angles: 256                # full-view scan, evenly spaced over [angle_start_deg, angle_end_deg)
+  angle_start_deg: 0.0
+  angle_end_deg: 180.0         # EXCLUSIVE: 180 deg repeats 0 deg for parallel beam
+  circle: false                # scan the whole square (circle: true crops 19-37% of each slice)
+  sino_scale: 57.2036          # train split at size 181; rerun scripts/compute_sino_scale.py if geometry changes
+  adjoint_via_backprop: true   # deepinv's default inverse-Radon adjoint fails the dot-product test
+  normalize_operator: false    # keep sinograms in physical units (line integrals)

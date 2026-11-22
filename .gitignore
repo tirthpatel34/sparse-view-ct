@@ -1,0 +1,42 @@
+# Data — never commit. LoDoPaB is ~16 GB and freely available from Zenodo.
+*.hdf5
+*.tar.gz
+*.zip
+data/
+lodopab/
+
+# Model checkpoints
+*.pt
+*.pth
+checkpoints/
+
+# Run outputs
+results/
+runs/
+logs/
+*.log
+*.out
+*.err
+
+# Containers
+*.sif
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.ipynb_checkpoints/
+
+# Editor and OS
+.DS_Store
+.vscode/
+.idea/
+
+# Backups
+*.bak
+*~
+
+# Figures are committed deliberately, so no blanket image ignore here.
+# Keep figures/ small — a few hundred KB of PNGs, not every training sample.
